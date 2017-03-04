@@ -1,16 +1,18 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="AuthorApp">
 <head>
     <title></title>
 	<meta charset="utf-8" />
     <script src="angular.js"></script>
+    <script src="Authors.js"></script>
 </head>
 <body>
-    <div> 
-        <!--ng- is an angular Directive-->
-        <input type="text" ng-model="abc"/>
-        {{abc}}
-        <!-- Double curly braces are Expressions-->
+    <div ng-controller="MyController"> 
+        <ul>
+            <li ng-repeat="author in authors">
+                {{author.name}}
+            </li>
+        </ul>
     </div>
 </body>
 </html>

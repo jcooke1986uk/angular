@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="angular.js"></script>
+    <script>
+        var mymodule = angular.module("mymodule", []);
+        mymodule.controller("x", function ($scope) {
+            $scope.clickCounter = 0;
+            $scope.check = function () {
+                $scope.clickCounter++;
+            }
+        });
+    </script>
+</head>
+<body ng-app="mymodule">
+    <div ng-controller="x">
+        <input type="checkbox" ng-model="model" ng-change="check()" />
+        <input type="checkbox" ng-model="model" />
+        <!--
+        ng-model="model" keeps the controls bound together so if you check one, the other is automatically checked.
+        The counter is only run for the first checkbox because that's the only one specifically called the check() function.
+        -->
+        <label> I am Working for Second CheckBox</label> <br/>
+        Checkboxes are Checked = {{model}}<br/> <!-- This will display true or false depending on the checked state-->
+        <div> counter = {{clickCounter}}</div>
+    </div>
+</body>
+</html>
