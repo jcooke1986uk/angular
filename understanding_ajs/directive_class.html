@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="angular.js"></script>
+    <style>
+        .changeColor { color: blue; }
+        .changeSize { font-size: 30px; }
+        .italic { font-style: italic; }
+    </style>
+</head>
+<body>
+    <div>
+        <p ng-class="style">Hello from Jenny..!!</p>
+        <br/>
+        <input ng-model="style"/> <!--When writing the above class names in the input box it applies to the text above because they are bound together by ng-model="style"-->
+    
+        <p ng-class="{changeColor:a, changeSize:b, italic:c}">Bye bye from Jenny..!!</p>
+        <br />
+        <input type="checkbox" ng-model="a" /> Color <br/>
+        <input type="checkbox" ng-model="b" /> Size <br />
+        <input type="checkbox" ng-model="c" /> Italic <br />
+        <!--Binding the classes on the p tag to the checkboxes-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div>
+        <button ng-click="x=x+1" ng-init="x=0">click me</button>
+        <!-- init is initialising the variable and the click specifies what should be done with that variable.  Basically just and onClick-->
+        <br/>
+        value of x is {{x}}
+        <br/>
+        <input ng-init="y=0" ng-blur="y=y+1"/>
+        <!-- init is initialising the variable and the blur specifies what should be done with that variable when focus is lost on the element.  Basically an onBlur -->
+        <input />
+        value of y is {{y}}
+    </div>
+</body>
+</html>
