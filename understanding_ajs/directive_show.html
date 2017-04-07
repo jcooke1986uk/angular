@@ -5,17 +5,39 @@
 	<meta charset="utf-8" />
     <script src="angular.js"></script>
 	<script>
-		var mymodule = angular.module("mymodule"), []);
+		var mymodule = angular.module("mymodule", []);
 		mymodule.controller("x", function ($scope) {
 			$scope.initialname = "Jenny";
 			$scope.initialemail = "jenny@jenny.com";
+			$scope.age = "55";
+			$scope.mypattern = /^\d*$/;
 		});
 	</script>
 </head>
 <body ng-app="mymodule">
     <div ng-controller="x">
-		<form>
-
+		<form name="form1">
+			<label>Name :</label>
+			<input name="name" ng-model="initialname" required />
+			<span style="color:red" ng-show="form1.name.$error.required">
+			<!--This is bound to the required tag
+			$error is predefined in angular-->
+				please provide your name
+			</span>
+			<br/>
+			<label>Email :</label>
+			<input name="email" ng-model="initialemail" type="email" />
+			<span style="color:red" ng-show="form1.email.$error.email">
+				please provide a valid email
+			</span>
+			<br/>
+			<label>Age :</label>
+			<input name="age" ng-model="age" ng-pattern="mypattern"/>
+			<span style="color:red" ng-show="form1.age.$error.pattern">
+			<!--Comparing the Age against the pattern defined-->
+				Age must be positive
+			</span>
+			<br/>
 		</form>
 
     </div>
