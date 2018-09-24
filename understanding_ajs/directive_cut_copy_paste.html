@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div>
+        <p ng-copy="x='you have copied'">
+        this p is actually having some text inside that.
+        </p>
+        <br />
+        <br />
+        <input type="text" ng-cut="cut=true" ng-paste="paste=true"/>
+        <br />
+        <br />
+        you have copied = {{x}}
+        <br />
+        <br />        
+        you have cut = {{cut}}
+        <br />
+        <br />        
+        you have paste = {{paste}}
+    </div>
+</body>
+</html>
