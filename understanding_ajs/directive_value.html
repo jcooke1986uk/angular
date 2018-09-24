@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="angular.js"></script>
+	<script>
+		var mymodule = angular.module("mymodule", []);
+		mymodule.controller("x", function ($scope) {
+			$scope.cars = ['MERCEDES', 'BMW', 'AUDI'];
+			$scope.my = { favourite: 'AUDI'};
+			  // object   //property  //value
+		});
+	</script>
+</head>
+<body ng-app="mymodule">
+    <div ng-controller="x">
+		<h4 id="favorite_CAR">Which is your favourite?</h4>
+		<label ng-repeat="car in cars">
+			{{car}}
+			<input type="radio" ng-model="my.favourite" ng-value="car">
+			<!--ng-value directive changes the ng-model directive.
+			When the radio button is selected ng-value changes the favourite-->
+		</label>
+		<div>Your favourite car is: {{my.favourite}}</div>
+    </div>
+</body>
