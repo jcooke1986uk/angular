@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -9,18 +9,18 @@
 		mymodule.controller("x", function ($scope) {
 			$scope.templatePages = [
 			{ temp: 'firstPage', url: 'directive_class.html'},
-			{ temp: 'secondPage', url: 'directive_key.html'}];
+			{ temp: 'secondPage', url: 'directive_keyup_keydown_disable.html'}];
 			$scope.tempPage = $scope.templatePages[0];
 		});
 	</script>
 </head>
 <body ng-app="mymodule">
     <div ng-controller="x">
-		<select ng-model="tempPage" ng-options="p.temp for p in templatePages">
-		<!--p is just the item and .temp is what we want to show-->
+		<select ng-model="tempPage" ng-options="page.temp for page in templatePages">
 			<option value="">(Empty)</option>
 		</select>
 		<div ng-include="tempPage.url">
 		</div>
     </div>
 </body>
+</html>

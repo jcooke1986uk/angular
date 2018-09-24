@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -9,7 +9,10 @@
 		mymodule.controller("x", function ($scope) {
 			$scope.cars = ['MERCEDES', 'BMW', 'AUDI'];
 			$scope.my = { favourite: 'AUDI'};
-			  // object   //property  //value
+		    // object   //property  //value
+		    // Can also use
+		    // $scope.my = { favourite: '' };
+            // so none are selected by default
 		});
 	</script>
 </head>
@@ -25,3 +28,4 @@
 		<div>Your favourite car is: {{my.favourite}}</div>
     </div>
 </body>
+</html>
